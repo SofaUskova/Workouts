@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fair_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTitles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1"
+            android:textFontWeight="300"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Theme.Workouts.OutlineBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:hintEnabled="false"
+            app:prefixText="x">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sets"
+                style="@style/Theme.Workouts.TextInputEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="x0"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:maxLength="2"
+                android:minWidth="30dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Theme.Workouts.OutlineBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:hintEnabled="false"
+            app:suffixText="кг">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weight"
+                style="@style/Theme.Workouts.TextInputEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0кг"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:maxLength="3"
+                android:minWidth="30dp"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/closeIcon"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_last"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fair_gray"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
