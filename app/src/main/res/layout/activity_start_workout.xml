@@ -6,34 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.start_workout.StartWorkout">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/back"
-        style="@style/BackButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="11.10.2022"
-        android:textColor="@color/black"
-        android:textFontWeight="700"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@+id/back"
+        android:fitsSystemWindows="true"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/back" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:textAlignment="center"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="11.10.2022"
+            app:titleCentered="true"
+            app:titleTextColor="@color/black"
+            tools:title="11.10.2022" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:clipToPadding="false"
         android:paddingBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:listitem="@layout/card_exercise_with_edit" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/endWorkout"

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workouts.R
 import com.example.workouts.ui.SwipeToDelete
-import com.example.workouts.ui.next_workout.OnItemClickListener
+import com.example.workouts.ui.models.Workout
 import kotlinx.android.synthetic.main.activity_start_workout.*
 
 
@@ -18,14 +18,13 @@ class StartWorkout : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_workout)
 
+        val workout: Workout? = intent?.getParcelableExtra("workout") as? Workout
+
+        topAppBar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+
         val adapter = ExerciseListAdapter(
             context = this,
-            list = exerciseList,
-            onItemClickListener = object : OnItemClickListener {
-                override fun onItemClicked(position: Int, any: Any?) {
-
-                }
-            }
+            list = workout?.exercises ?: listOf(),
         )
 
         recyclerView.layoutManager = LinearLayoutManager(this)

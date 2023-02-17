@@ -20,7 +20,7 @@ class NextWorkout : AppCompatActivity() {
         val db = AppDatabase(this)
 
 //        viewModel.setData(db)
-        viewModel.getWorkout(db,1)
+        viewModel.getWorkout(db, 1)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = ListAdapter(
@@ -35,7 +35,9 @@ class NextWorkout : AppCompatActivity() {
         }
 
         startWorkout.setOnClickListener {
-            startActivity(Intent(this, StartWorkout::class.java))
+            startActivity(Intent(this, StartWorkout::class.java).apply {
+                putExtra("workout", viewModel.currentWorkout.value)
+            })
         }
     }
 

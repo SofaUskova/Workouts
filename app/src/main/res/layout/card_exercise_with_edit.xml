@@ -35,10 +35,10 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:text="Подтягивание широким хватом"
                 android:textColor="@color/black"
                 android:textFontWeight="300"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                tools:text="Подтягивание широким хватом" />
 
             <ImageView
                 android:id="@+id/cardIcon"
@@ -50,34 +50,41 @@
                 android:src="@drawable/ic_arrow_right" />
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/setRecyclerView"
+        <LinearLayout
+            android:id="@+id/setsList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginHorizontal="16dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:visibility="gone"
-            tools:visibility="visible" />
+            tools:visibility="visible">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/addSet"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="16dp"
-            android:text="Добавить подход"
-            android:textAllCaps="false"
-            android:visibility="gone"
-            app:cornerRadius="10dp"
-            app:icon="@drawable/ic_add"
-            app:iconGravity="start"
-            app:iconPadding="8dp"
-            app:iconSize="14dp"
-            app:strokeColor="@color/secondary"
-            tools:visibility="visible" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/setRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                tools:listitem="@layout/card_set" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addSet"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                android:text="Добавить подход"
+                android:textAllCaps="false"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="start"
+                app:iconPadding="8dp"
+                app:iconSize="14dp"
+                app:strokeColor="@color/secondary" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
